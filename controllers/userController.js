@@ -18,7 +18,7 @@ router.post('/saveUser', async (req, res) => {
         const user = new User(req.body);
         const createUser = await user.save();
         res.status(201).send(createUser);
-        console.log(createUser);
+        console.log(`createUser is saved`);
 
 
     } catch (e) { 
@@ -117,6 +117,8 @@ router.get('/getUserByEmail/:email', async(req,res)=>{
     }
 
 });
+
+
 
 
 module.exports=router;

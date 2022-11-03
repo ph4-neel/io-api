@@ -3,6 +3,7 @@ const app = express();
 const port = process.env.PORT || 3000;
 require('./db/config');
 const userController = require('./controllers/userController');
+const skillController = require('./controllers/skillController');
 
 
 
@@ -12,6 +13,8 @@ app.use(bodyParser.urlencoded({ extended: true }));
 const router =new express.Router();
 
 app.use(userController);
+
+ app.use(skillController);
 
 
 app.listen(port, () => {
